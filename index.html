@@ -206,20 +206,220 @@ p{color:var(--muted);letter-spacing:-.006em}
 .tool h3{font-size:19px;margin-top:30px}
 .tool p{font-size:12px;margin-top:5px}
 
-/* SKILLS */
-.skills-section{background:var(--soft)}
-.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.skill{
-  min-height:190px;padding:25px;background:#fff;border:1px solid var(--border);
-  border-radius:var(--radius-md);display:flex;flex-direction:column;
-  justify-content:space-between;
-  transition:transform .55s var(--ease),box-shadow .55s var(--ease);
-  will-change:transform
+/* WHAT I DO */
+
+.skills-section{
+  background:var(--soft);
 }
-.skill:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
-.skill-number{font-size:11px;color:var(--meta)}
-.skill h3{font-size:20px}
-.skill p{font-size:12px;margin-top:8px}
+
+.services-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:50px;
+  margin-bottom:58px;
+}
+
+.services-head .eyebrow{
+  margin-bottom:18px;
+}
+
+.services-head > p{
+  max-width:320px;
+  font-size:14px;
+  line-height:1.7;
+  color:#85857f;
+  padding-bottom:5px;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+}
+
+.service-card{
+  min-height:350px;
+  padding:24px 25px 26px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:28px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  position:relative;
+  transition:
+    transform .7s var(--ease),
+    border-color .5s var(--ease),
+    box-shadow .7s var(--ease);
+  will-change:transform;
+}
+
+.service-grid.stagger.show .service-card:hover{
+  transform:translateY(-6px);
+  border-color:#d2d2cd;
+  box-shadow:0 22px 45px rgba(0,0,0,.07);
+}
+
+
+.service-visual{
+  height:145px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:12px 0 8px;
+}
+
+.service-visual svg{
+  width:100%;
+  max-width:210px;
+  height:100%;
+  overflow:visible;
+  transition:transform .7s var(--ease);
+}
+
+.service-visual rect,
+.service-visual circle,
+.service-visual line,
+.service-visual path{
+  stroke:#d7d7d2;
+  stroke-width:1.3;
+  fill:none;
+  vector-effect:non-scaling-stroke;
+  transition:stroke .45s var(--ease),fill .45s var(--ease);
+}
+
+.service-visual .dark-fill{
+  fill:#202020;
+  stroke:#202020;
+}
+
+.service-visual .dark-circle{
+  fill:#202020;
+  stroke:#202020;
+}
+
+.service-visual text{
+  font-family:Inter,Arial,sans-serif;
+  font-size:58px;
+  font-weight:500;
+  letter-spacing:-.08em;
+  fill:#202020;
+}
+
+.service-card:hover .service-visual svg{
+  transform:translateY(-3px) scale(1.015);
+}
+
+.service-content{
+  margin-top:auto;
+}
+
+.service-content h3{
+  font-size:21px;
+  line-height:1.1;
+  margin-bottom:12px;
+  letter-spacing:-.045em;
+}
+
+.service-content p{
+  max-width:260px;
+  font-size:13px;
+  line-height:1.7;
+  color:#85857f;
+}
+
+/* subtle motion */
+
+.service-card:nth-child(2) .service-visual circle{
+  animation:servicePulse 3.5s ease-in-out infinite;
+}
+
+.service-card:nth-child(2) .service-visual circle:nth-of-type(2){
+  animation-delay:.35s;
+}
+
+.service-card:nth-child(2) .service-visual circle:nth-of-type(3){
+  animation-delay:.7s;
+}
+
+@keyframes servicePulse{
+  0%,100%{opacity:1}
+  50%{opacity:.5}
+}
+
+/* responsive */
+
+@media(max-width:1000px){
+  .services-head{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .services-head > p{
+    max-width:520px;
+  }
+
+  .service-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:560px){
+  .services-head{
+    margin-bottom:38px;
+    gap:16px;
+  }
+
+  .services-head > p{
+    max-width:100%;
+    font-size:13px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .service-card{
+    min-height:320px;
+    padding:20px;
+    border-radius:24px;
+  }
+
+  .service-visual{
+    height:125px;
+    margin:4px 0 8px;
+  }
+
+  .service-visual svg{
+    max-width:190px;
+  }
+
+  .service-content h3{
+    font-size:20px;
+  }
+
+  .service-content p{
+    font-size:12px;
+    max-width:100%;
+  }
+
+  .service-grid.stagger.show .service-card:hover{
+    transform:translateY(-3px);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .service-card,
+  .service-top span:last-child,
+  .service-visual svg,
+  .service-visual circle{
+    transition:none!important;
+    animation:none!important;
+  }
+}
 
 /* PROJECTS */
 .projects-section{background:#fff}
@@ -379,7 +579,7 @@ footer{
   h1{font-size:58px}
   h2{font-size:44px}
   .hero-image{height:430px}
-  .tools-grid,.skills{grid-template-columns:1fr}
+  .tools-grid,.service-grid{grid-template-columns:1fr}
   .project-visual{height:320px}
   .case-study{padding:20px}
   .before-after{grid-template-columns:1fr}
@@ -451,7 +651,7 @@ footer{
     <div class="hero-copy">
       <div class="eyebrow">UI/UX Designer</div>
       <h1>Aryan<br>Semval</h1>
-      <p>I’m Aryan, a Ui/Ux designer exploring the space between thoughtfuls`
+      <p>I’m Aryan, a UI/UX designer exploring the space between thoughtfuls`
         design, simple interactions and modern digital experiences.</p>
       <div class="hero-actions">
         <a href="#work" class="btn dark">View my work <span>↗</span></a>
@@ -461,7 +661,6 @@ footer{
 
     <div class="hero-image-wrap">
       <div class="hero-image rounded" id="heroImage">
-        <!-- Replace YOUR_IMAGE_URL with your actual portrait/image URL. -->
         <img src="./images/aryan.png" alt="Aryan Semwal — UI/UX Designer"
              onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
         <div class="image-placeholder" style="display:none">YOUR IMAGE</div>
@@ -559,21 +758,196 @@ footer{
 
 <section class="section skills-section" id="skills">
   <div class="container reveal">
-    <div class="section-head">
+
+    <div class="services-head">
       <div>
+        <div class="eyebrow"></div>
         <h2>What I do.</h2>
       </div>
     </div>
 
-    <div class="skills stagger">
-      <div class="skill"><span class="skill-number"></span><div><h3 class="hover-text">UI Design</h3><p>Clean visual interfaces and strong hierarchy.</p></div></div>
-      <div class="skill"><span class="skill-number"></span><div><h3 class="hover-text">UX Design</h3><p>User flows and experiences built around clarity.</p></div></div>
-      <div class="skill"><span class="skill-number"></span><div><h3 class="hover-text">Wireframing</h3><p>Turning ideas into structured product layouts.</p></div></div>
-      <div class="skill"><span class="skill-number"></span><div><h3 class="hover-text">Prototyping</h3><p>Interactive experiences before development.</p></div></div>
-      <div class="skill"><span class="skill-number"></span><div><h3 class="hover-text">Responsive Design</h3><p>Interfaces that work across every screen.</p></div></div>
-      <div class="skill"><span class="skill-number"></span><div><h3 class="hover-text">Design Systems</h3><p>Consistent reusable components and patterns.</p></div></div>
-      <div class="skill"><span class="skill-number"></span><div><h3 class="hover-text">Web Design</h3><p>Modern websites with purposeful layouts.</p></div></div>
-      <div class="skill"><span class="skill-number"></span><div><h3 class="hover-text">Visual Design</h3><p>Typography, spacing and composition.</p></div></div>
+    <div class="service-grid stagger">
+
+      <article class="service-card">
+        <div class="service-top">
+        </div>
+
+        <div class="service-visual">
+          <svg viewBox="0 0 240 120">
+            <rect x="34" y="18" width="172" height="84" rx="8"/>
+            <rect x="50" y="34" width="34" height="10" rx="4" class="dark-fill"/>
+            <rect x="96" y="34" width="58" height="5" rx="2.5"/>
+            <rect x="96" y="45" width="44" height="5" rx="2.5"/>
+            <rect x="50" y="64" width="30" height="20" rx="5"/>
+            <rect x="87" y="64" width="30" height="20" rx="5"/>
+            <rect x="124" y="64" width="30" height="20" rx="5"/>
+          </svg>
+        </div>
+
+        <div class="service-content">
+          <h3>UI Design</h3>
+          <p>Clean visual interfaces and strong hierarchy.</p>
+        </div>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-top">
+          
+        </div>
+
+        <div class="service-visual">
+          <svg viewBox="0 0 240 120">
+            <line x1="48" y1="60" x2="192" y2="60"/>
+            <circle cx="48" cy="60" r="19"/>
+            <circle cx="120" cy="60" r="19"/>
+            <circle cx="192" cy="60" r="19"/>
+            <circle cx="48" cy="60" r="8" class="dark-circle"/>
+            <circle cx="120" cy="60" r="8"/>
+            <circle cx="192" cy="60" r="8"/>
+          </svg>
+        </div>
+
+        <div class="service-content">
+          <h3>UX Design</h3>
+          <p>User flows and experiences built around clarity.</p>
+        </div>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-top">
+          
+        </div>
+
+        <div class="service-visual">
+          <svg viewBox="0 0 240 120">
+            <rect x="34" y="16" width="172" height="88" rx="8"/>
+            <rect x="50" y="30" width="58" height="48"/>
+            <path d="M50 30L108 78M108 30L50 78"/>
+            <rect x="122" y="34" width="58" height="6" rx="3"/>
+            <rect x="122" y="47" width="46" height="6" rx="3"/>
+            <rect x="122" y="60" width="34" height="6" rx="3"/>
+            <rect x="122" y="78" width="24" height="14" rx="4"/>
+            <rect x="151" y="78" width="24" height="14" rx="4"/>
+          </svg>
+        </div>
+
+        <div class="service-content">
+          <h3>Wireframing</h3>
+          <p>Turning ideas into structured product layouts.</p>
+        </div>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-top">
+          
+        </div>
+
+        <div class="service-visual">
+          <svg viewBox="0 0 240 120">
+            <rect x="42" y="28" width="82" height="52" rx="8"/>
+            <rect x="116" y="40" width="82" height="52" rx="8"/>
+            <circle cx="109" cy="54" r="4"/>
+            <circle cx="137" cy="66" r="4"/>
+            <path d="M109 54C122 54 122 66 137 66"/>
+            <path d="M76 48l10 6-10 6z" class="dark-fill"/>
+          </svg>
+        </div>
+
+        <div class="service-content">
+          <h3>Prototyping</h3>
+          <p>Interactive experiences before development.</p>
+        </div>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-top">
+          
+        </div>
+
+        <div class="service-visual">
+          <svg viewBox="0 0 240 120">
+            <rect x="28" y="28" width="104" height="62" rx="6"/>
+            <rect x="144" y="40" width="48" height="46" rx="6"/>
+            <rect x="201" y="49" width="22" height="37" rx="5"/>
+            <line x1="44" y1="96" x2="114" y2="96"/>
+          </svg>
+        </div>
+
+        <div class="service-content">
+          <h3>Responsive Design</h3>
+          <p>Interfaces that work across every screen.</p>
+        </div>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-top">
+          
+        </div>
+
+        <div class="service-visual">
+          <svg viewBox="0 0 240 120">
+            <path d="M120 20L166 44L120 68L74 44Z" class="dark-fill"/>
+            <path d="M120 46L166 70L120 94L74 70Z"/>
+            <path d="M120 68L166 92L120 116L74 92Z"/>
+          </svg>
+        </div>
+
+        <div class="service-content">
+          <h3>Design Systems</h3>
+          <p>Consistent reusable components and patterns.</p>
+        </div>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-top">
+          
+        </div>
+
+        <div class="service-visual">
+          <svg viewBox="0 0 240 120">
+            <rect x="30" y="18" width="180" height="84" rx="8"/>
+            <circle cx="46" cy="31" r="3"/>
+            <circle cx="57" cy="31" r="3"/>
+            <circle cx="68" cy="31" r="3"/>
+            <rect x="48" y="48" width="68" height="32" rx="4"/>
+            <rect x="126" y="50" width="54" height="5" rx="2.5"/>
+            <rect x="126" y="61" width="44" height="5" rx="2.5"/>
+            <rect x="126" y="72" width="32" height="5" rx="2.5"/>
+          </svg>
+        </div>
+
+        <div class="service-content">
+          <h3>Web Design</h3>
+          <p>Modern websites with purposeful layouts.</p>
+        </div>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-top">
+          
+        </div>
+
+        <div class="service-visual visual-visual">
+          <svg viewBox="0 0 240 120">
+            <text x="48" y="78">Aa</text>
+            <circle cx="158" cy="45" r="18"/>
+            <rect x="168" y="60" width="28" height="28" rx="3"/>
+          </svg>
+        </div>
+
+        <div class="service-content">
+          <h3>Visual Design</h3>
+          <p>Typography, spacing and composition.</p>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
