@@ -300,9 +300,15 @@ footer{
   width:100%
 }
 .footer-inner{
-  color:#777;border-top:1px solid #292929;padding:28px 0;
-  font-size:11px;display:flex;justify-content:space-between;
-  letter-spacing:.01em
+  color:#777;
+  border-top:1px solid #292929;
+  padding:24px 0;
+  font-size:11px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  letter-spacing:.01em;
 }
 
 /* MOTION */
@@ -382,7 +388,12 @@ footer{
   .contact-row{align-items:flex-start;flex-direction:column;gap:24px}
   .socials{justify-content:flex-start;gap:14px 18px;width:100%}
   .socials a{font-size:12px}
-  .footer-inner{flex-direction:column;gap:10px}
+  .footer-inner{
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
 }
 @media(prefers-reduced-motion:reduce){
   /* Full motion (parallax, 3D tilt, translate/scale/blur, nav hide) is
