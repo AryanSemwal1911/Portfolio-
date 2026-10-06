@@ -21,7 +21,7 @@
   --text:#181818;
   --muted:#6B6B6B;
   --meta:#8A8A8A;
-  --light:#F7F7F5;
+  --light:#FFFFFF;
   --soft:#F1F1EE;
   --border:#E4E4E0;
   --white:#FFFFFF;
@@ -66,7 +66,7 @@ h1{
 h2{
   font-size:clamp(48px,5vw,68px);
   line-height:.94;letter-spacing:-.07em;
-  font-weight:700
+  font-weight:800
 }
 h3{letter-spacing:-.035em;font-weight:600}
 p{color:var(--muted);letter-spacing:-.006em}
@@ -256,7 +256,7 @@ p{color:var(--muted);letter-spacing:-.006em}
 .tool:hover{transform:translateY(-6px);border-color:#c9c9c4;box-shadow:0 20px 40px rgba(0,0,0,.08)}
 .tool-top{display:flex;align-items:center;justify-content:space-between}
 .tool-logo{
-  width:44px;height:44px;border-radius:12px;object-fit:contain;background:#f7f7f5;
+  width:44px;height:44px;border-radius:12px;object-fit:contain;background:#ffffff;
   padding:9px;transition:transform .5s var(--ease)
 }
 .tool:hover .tool-logo{transform:scale(1.08) rotate(-4deg)}
@@ -684,6 +684,70 @@ footer{
   .project-visual img{transform:none!important;transition:none!important}
   .scroll-progress-bar{transition:none!important}
 }
+
+
+/* =========================================================
+   IRCTC CASE STUDY — INTEGRATED SECTION
+   ========================================================= */
+  /* =========================================================
+    REDESIGNED TOPIC
+    Scoped to .redesigned-section so existing portfolio styles
+    remain untouched.
+    ========================================================= */
+
+  .redesigned-section{background:var(--light)}
+    .redesigned-heading{align-items:end}
+    .redesigned-heading > div{max-width:900px}
+    .case-eyebrow{margin-bottom:14px;color:var(--meta);font-size:11px;line-height:1;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+    .redesigned-heading h2{font-size:clamp(48px,5vw,68px);line-height:.96;letter-spacing:-.055em;font-weight:700}
+    .case-project-type{margin-top:14px;color:var(--muted);font-size:13px;line-height:1.5;letter-spacing:0}
+    .redesigned-project{border:1px solid var(--border);border-radius:28px;overflow:hidden;background:#fff}
+    .redesigned-info{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;padding:44px 40px;border-bottom:1px solid var(--border)}
+    .redesigned-info h3{margin-top:8px;font-size:clamp(38px,4vw,78px);line-height:.98;letter-spacing:-.045em;font-weight:700}
+    .redesigned-info > p{max-width:590px;align-self:end;color:#66665f;font-size:16px;line-height:1.7;letter-spacing:-.005em}
+    .redesigned-details{padding:6px 40px 30px}
+    .redesigned-detail{display:grid;grid-template-columns:45px 1fr;gap:18px;padding:42px 0;border-bottom:1px solid var(--border)}
+    .redesigned-detail:last-child{border-bottom:0}
+    .redesigned-detail > span{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--border);border-radius:50%;color:#888880;font-size:10px;font-weight:600}
+    .redesigned-detail small{display:block;margin-bottom:12px;color:#888880;font-size:11px;line-height:1.3;font-weight:600;letter-spacing:.09em}
+    .redesigned-detail h4{margin:0 0 28px;max-width:820px;color:#181818;font-size:clamp(32px,3vw,44px);line-height:1.02;letter-spacing:-.035em;font-weight:650}
+    .redesigned-before-after{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .redesigned-before-after > div{min-width:0}
+    .redesigned-before-after label{display:block;margin-bottom:9px;color:#777770;font-size:11px;line-height:1.4;font-weight:600;letter-spacing:.06em}
+    .redesigned-before-after img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top center;border:1px solid var(--border);border-radius:12px;background:#f2f2ef;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+    .redesigned-before-after img:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.06)}
+    .redesigned-improvements{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .redesigned-improvements > div{min-height:180px;padding:22px;border:1px solid var(--border);border-radius:16px;background:#fafaf8;transition:transform .45s var(--ease),background .45s var(--ease),box-shadow .45s var(--ease)}
+    .redesigned-improvements > div:hover{transform:translateY(-4px);background:#fff;box-shadow:0 14px 30px rgba(0,0,0,.05)}
+    .redesigned-improvements b{display:block;margin-bottom:28px;color:#9a9a92;font-size:10px;line-height:1;font-weight:600}
+    .redesigned-improvements strong{display:block;margin-bottom:9px;color:#222;font-size:16px;line-height:1.25;letter-spacing:-.015em;font-weight:650}
+    .redesigned-improvements p{max-width:440px;color:#707069;font-size:14px;line-height:1.65;letter-spacing:0}
+    .redesigned-result-copy{max-width:720px}
+    .redesigned-result-copy h4{margin-bottom:0}
+    .redesigned-result-copy > p:last-child{margin-top:16px;color:#66665f;font-size:16px;line-height:1.7}
+    .redesigned-result-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+    .redesigned-result-item{padding:16px 18px;border:1px solid var(--border);border-radius:16px;background:#fafaf8;color:#33332f;font-size:13px;line-height:1.4;font-weight:600;transition:transform .45s var(--ease),background .45s var(--ease),box-shadow .45s var(--ease)}
+    .redesigned-result-item:hover{transform:translateY(-3px);background:#fff;box-shadow:0 14px 30px rgba(0,0,0,.05)}
+    .redesigned-result-item::before{content:"✓";display:inline-block;margin-right:9px;color:#666}
+    @media(max-width:1000px){.redesigned-info{grid-template-columns:1fr;gap:24px}.redesigned-improvements{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:600px){
+      .redesigned-heading{flex-direction:column;align-items:flex-start;gap:18px}
+      .redesigned-heading h2{font-size:44px}
+      .redesigned-info{padding:30px 22px}
+      .redesigned-info h3{font-size:38px}
+      .redesigned-info > p{font-size:15px;line-height:1.7}
+      .redesigned-details{padding:4px 22px 20px}
+      .redesigned-detail{grid-template-columns:34px 1fr;gap:12px;padding:34px 0}
+      .redesigned-detail h4{font-size:31px;line-height:1.04;margin-bottom:22px}
+      .redesigned-before-after{grid-template-columns:1fr;gap:18px}
+      .redesigned-improvements{grid-template-columns:1fr}
+      .redesigned-improvements > div{min-height:auto;padding:20px}
+      .redesigned-result-list{grid-template-columns:1fr}
+      .redesigned-result-copy > p:last-child{font-size:15px}
+    }
+    @media(prefers-reduced-motion:reduce){.redesigned-before-after img,.redesigned-improvements > div,.redesigned-result-item{transition:none!important}}
+
+
 </style>
 </head>
 
@@ -699,6 +763,7 @@ footer{
       <a href="#tools">Tools</a>
       <a href="#skills">Skills</a>
       <a href="#work">Work</a>
+      <a href="#case-study">Case Study</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="menu" id="menuButton" aria-label="Open menu">☰</button>
@@ -1605,7 +1670,7 @@ body{
     >
 
       <img
-        src="./images/aryan.png"
+        src="./images/portfolio img+pdf\aryan.png"
         alt="Aryan Semval"
         class="character"
         id="character"
@@ -2501,7 +2566,7 @@ character.addEventListener(
                   <article class="project">
         <div class="project-visual">
     <a href="https://www.figma.com/proto/mNQzHJDImi9YEKN412ODrl/Aryan-Semwal?node-id=3419-15244&t=x78UUPTCSDtdY6os-1" target="_blank" rel="noopener noreferrer">
-        <img src="./images/alpine.png" alt="Alpine UI/UX Project">
+        <img src="./images/portfolio img+pdf\alpine.png" alt="Alpine UI/UX Project">
     </a>
 <span class="project-badge">eCOMMERCE WEBSITE</span>
 </div>
@@ -2517,7 +2582,7 @@ character.addEventListener(
       <article class="project">
         <div class="project-visual">
          <a href="https://www.figma.com/proto/mNQzHJDImi9YEKN412ODrl/Aryan-Semwal?node-id=3793-3325&t=x78UUPTCSDtdY6os-1" target="_blank" rel="noopener noreferrer">
-        <img src="./images/pickle.png" alt="Alpine UI/UX Project">
+        <img src="./images/portfolio img+pdf\pickle.png" alt="Alpine UI/UX Project">
     </a>
           <span class="project-badge">Sports App </span>
         </div>
@@ -2532,7 +2597,7 @@ character.addEventListener(
             <article class="project">
         <div class="project-visual">
          <a href="https://www.figma.com/proto/mNQzHJDImi9YEKN412ODrl/Aryan-Semwal?node-id=3313-89&t=bKWO8BOlW0jBKSDP-1" target="_blank" rel="noopener noreferrer">
-        <img src="./images/wavve.jpg" alt="Wavve">
+        <img src="./images/portfolio img+pdf\wavve.jpg" alt="Wavve">
     </a>
           <span class="project-badge">Music App </span>
         </div>
@@ -2548,7 +2613,7 @@ character.addEventListener(
             <article class="project">
         <div class="project-visual">
          <a href="https://www.figma.com/proto/mNQzHJDImi9YEKN412ODrl/Aryan-Semwal?node-id=3313-2089&t=rBamR97e8mqmehG0-1" target="_blank" rel="noopener noreferrer">
-        <img src="./images/nike.png" alt="Nike">
+        <img src="./images/portfolio img+pdf\nike.png" alt="Nike">
     </a>
           <span class="project-badge">Shoes</span>
         </div>
@@ -2570,6 +2635,138 @@ character.addEventListener(
 
 
 
+<section class="section redesigned-section" id="case-study">
+    <div class="container reveal">
+
+      <div class="project-intro redesigned-heading">
+        <div>
+          <div class="case-eyebrow"></div>
+          <h2>Case Study</h2>
+          
+        </div>
+      </div>
+
+      <article class="redesigned-project">
+
+      
+      
+
+        <!-- TEMPLATE CONTAINER: PROJECT INFORMATION + REAL INTRO COPY -->
+        <div class="redesigned-info">
+          <div>
+            <div class="project-meta">WEB REDESIGN • UI/UX</div>
+            <h3>IRCTC <BR>
+              Redesigned</h3>
+          
+          </div>
+
+          <p>
+            The original IRCTC experience contains a lot of useful information, but important actions and features compete for attention across the interface.
+            <br><br>
+            The redesign focuses on clearer navigation, a more focused booking flow, and easier access to journey and support actions.
+          </p>
+        </div>
+
+        <div class="redesigned-details">
+
+          <!-- REAL CONTENT: BEFORE → AFTER -->
+          <div class="redesigned-detail">
+            <span>01</span>
+            <div>
+              <small>BEFORE → AFTER</small>
+              <h4>From information-heavy<br>to task-focused.</h4>
+
+              <div class="redesigned-before-after">
+               <div>
+  <label>BEFORE · ORIGINAL IRCTC</label>
+  <a href="https://www.figma.com/design/mNQzHJDImi9YEKN412ODrl/Aryan-Semwal?node-id=4254-2&t=4lNeToHSH5czq8ZK-1" target="_blank" rel="noopener noreferrer">
+    <img src="./images/portfolio img+pdf\old.png" alt="Original IRCTC screenshot">
+  </a>
+</div>
+
+<div>
+  <label>AFTER · REDESIGNED IRCTC</label>
+  <a href="https://www.figma.com/design/mNQzHJDImi9YEKN412ODrl/Aryan-Semwal?node-id=4254-3&t=4lNeToHSH5czq8ZK-1" target="_blank" rel="noopener noreferrer">
+    <img src="./images/portfolio img+pdf\new.png" alt="Redesigned IRCTC screenshot">
+  </a>
+</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REAL CONTENT: ALL SIX IMPROVEMENTS -->
+          <div class="redesigned-detail">
+            <span>02</span>
+            <div>
+              <small>WHAT CHANGED</small>
+              <h4>Six changes that  <br> Simplify the experience.</h4>
+
+              <div class="redesigned-improvements">
+                <div>
+                  <b>01</b>
+                  <strong>Focused Hero</strong>
+                  <p>Reworked the hero with clear messaging and focused CTAs for easier understanding.</p>
+                </div>
+
+                <div>
+                  <b>02</b>
+                  <strong>Dedicated Booking</strong>
+                  <p>Separated booking from the hero and organized the fields into a clearer flow.</p>
+                </div>
+
+                <div>
+                  <b>03</b>
+                  <strong>Journey Overview</strong>
+                  <p>Added a dedicated section to quickly view departure, destination and journey details in one place.
+                </div>
+
+                <div>
+                  <b>04</b>
+                  <strong>Quick Railway Actions</strong>
+                  <p>Grouped frequently used railway services for faster access and easier navigation.</p>
+                </div>
+
+                <div>
+                  <b>05</b>
+                  <strong>Structured Support</strong>
+                  <p>Added searchable help topics, query submission and tracking in one dedicated section.</p>
+                </div>
+
+                <div>
+                  <b>06</b>
+                  <strong>Clearer FAQ &amp; Footer</strong>
+                  <p>Organized FAQs and grouped footer links to make important information easier to find.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TEMPLATE CONTAINER: FINAL NUMBERED DETAIL, FILLED WITH REAL RESULT CONTENT -->
+          <div class="redesigned-detail redesigned-final">
+            <span>03</span>
+            <div>
+              <small>OUTCOME</small>
+              <div class="redesigned-result-copy">
+                <h4>Less searching.<br>More doing.</h4>
+                <p>The redesign makes key railway tasks easier to find, understand <br> and complete, with less visual clutter along the way.</p>
+              </div>
+
+              <div class="redesigned-result-list">
+                <div class="redesigned-result-item">Clearer navigation</div>
+                <div class="redesigned-result-item">Focused booking</div>
+                <div class="redesigned-result-item">Easier journey actions</div>
+                <div class="redesigned-result-item">Faster support discovery</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </article>
+    </div>
+  </section>
+
+
 <section class="section contact-section contact" id="contact">
   <div class="container reveal">
     <h2 class="hover-text fade-text">Let’s work<br>together.</h2>
@@ -2582,7 +2779,7 @@ character.addEventListener(
         <a href="https://www.linkedin.com/in/aryan-semval-07275943a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/AryanSemwal1911" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.figma.com/design/mNQzHJDImi9YEKN412ODrl/Aryan-Semwal?m=auto&t=r4T68DHOwu7Lgy3T-1" target="_blank" rel="noopener noreferrer">Figma</a>
-        <a href="./images/resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+        <a href="./images/portfolio img+pdf\Aryan CV.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
       </div>
     </div>
   </div>
